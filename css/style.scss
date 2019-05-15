@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400|Raleway:200,300,400');
+
+$primary-font: 'Raleway', sans-serif;
+$secondary-font: 'Oswald', sans-serif;
+$primary-font-color: #fef;
+$primary-background: #222;
+
+$featured-image1: url('/img/latte.jpg');
+$featured-image2: url('/img/barista.jpg');
+$featured-image3: url('/img/interior.jpg');
+$featured-image4: url('/img/breakfast.jpg');
+$featured-image5: url('/img/pastries.jpg');
+$featured-image6: url('/img/coffee-beans.jpg');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $primary-font;
+}
+
+header {
+	background: $primary-background;
+	padding-bottom: 5px;
+
+
+nav {
+	font-size: 1.3em;
+	font-weight: 200;
+	font-family: $primary-font;
+	color: $primary-font-color;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+		display: flex;
+		justify-content: center;
+
+		li {
+			list-style: none;
+			display: inline-block;
+			margin: 8px 20px;
+
+			a {
+				padding: 5px;
+				color: inherit;
+				text-decoration: none;
+			}
+
+			a:hover {
+				border-bottom: 3px solid $primary-font-color;
+				transition: border-bottom 0.25s ease-out;
+			}
+		}
+	}
+}
+
+	#nav-logo {
+		margin: 45px;
+		font-size: 3rem;
+		font-family: $secondary-font;
+		text-align: center;
+		color: $primary-font-color;
+	}
+
+}
+
+main {
+	background: $primary-background;
+
+	#featured-images {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+
+		div {
+			width: 33.5vw;
+			position: relative;
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+	
+			.overlay {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: rgba(34, 34, 34, 0);
+				transition: 0.5s ease;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				p {
+					display: none;
+				}
+			}
+		}
+		div:hover .overlay {
+			background: rgba(34, 34, 34, 0.5);
+		}
+		div:hover .overlay p {
+			display: inline-block;
+			color: rgba(255, 238, 255, 1);
+		}
+
+	}
+	
+}
+
+footer {
+	background: $primary-background;
+	padding: 50px 20px;
+	color: $primary-font-color;
+}
