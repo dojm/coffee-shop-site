@@ -10,32 +10,86 @@ body {
 
 header {
   background: #222;
-  padding-bottom: 5px;
+  position: relative;
+}
+
+header #slider-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+header #slider-menu i {
+  color: #fef;
+  margin: 40px;
+}
+
+header #slider-menu i:hover {
+  color: #777;
+  -webkit-transition: color 0.65s ease;
+  transition: color 0.65s ease;
+  cursor: pointer;
 }
 
 header nav {
-  font-size: 1.3em;
+  font-size: 1.8rem;
   font-weight: 200;
   font-family: "Raleway", sans-serif;
   color: #fef;
-}
-
-header nav ul {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  width: 0px;
+  background: #222;
+  opacity: 0.95;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header nav span {
+  color: #fef;
+  margin: 0 20px;
+  padding: 10px;
+  font-size: 4rem;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+header nav ul {
+  margin-top: 50px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header nav ul li {
   list-style: none;
-  display: inline-block;
-  margin: 8px 20px;
+  display: block;
+  margin: 50px 20px;
 }
 
 header nav ul li a {
@@ -51,7 +105,8 @@ header nav ul li a:hover {
 }
 
 header #nav-logo {
-  margin: 45px;
+  background: #1d1d1d;
+  padding: 25px;
   font-size: 3rem;
   font-family: "Oswald", sans-serif;
   text-align: center;
@@ -65,14 +120,13 @@ main {
 main #featured-images {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
 }
 
 main #featured-images div {
-  width: 33.5vw;
   position: relative;
 }
 
@@ -120,5 +174,49 @@ footer {
   background: #222;
   padding: 50px 20px;
   color: #fef;
+}
+
+@media (min-width: 1024px) {
+  header {
+    position: relative;
+  }
+  header nav {
+    font-size: 1.3em;
+    font-weight: 200;
+    position: relative;
+    width: 100vw;
+  }
+  header nav span {
+    display: none;
+  }
+  header nav ul {
+    margin: 5px;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header nav ul li {
+    display: inline-block;
+    margin: 8px 20px;
+  }
+  header #slider-menu {
+    display: none;
+  }
+  main #featured-images {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[2];
+        grid-template-rows: repeat(2, 1fr);
+  }
 }
 /*# sourceMappingURL=style.css.map */
