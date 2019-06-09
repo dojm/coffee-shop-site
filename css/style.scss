@@ -17,24 +17,6 @@ header {
   background: $primary-background;
   position: relative;
 
-  #slider-menu {
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    i {
-      color: $primary-font-color;
-      margin: 40px;
-
-      &:hover {
-        color: #777;
-        transition: color 0.65s ease;
-        cursor: pointer;
-      }
-    }
-
-  }
-
   nav {
     font-size: 1.8rem;
     font-weight: 200;
@@ -47,23 +29,12 @@ header {
     width: 0px;
     background: $primary-background;
     opacity: 0.95;
-    z-index: 1;
     overflow: hidden;
     transition: all 0.4s ease-out;
     display: flex;
     flex-direction: column;
+    z-index: 1;
     
-    span {
-      color: $primary-font-color;
-      margin: 0 20px;
-      padding: 10px;
-      font-size: 4rem;
-      top: 0;
-      right: 0;
-      cursor: pointer;
-      align-self: flex-end;
-    }
-
     ul {
       margin-top: 50px;
       padding: 0;
@@ -100,6 +71,43 @@ header {
     color: $primary-font-color;
   }
 
+  #slider-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    #toggle {
+      margin: 15px 25px;
+      padding: 3px;
+      top: 0;
+      right: 0;
+      align-self: flex-end;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      
+      &:hover {
+
+        div:first-child {
+          transform: translateY(9px) rotate(-135deg);
+        }
+        div:nth-child(2) {
+          opacity: 0;
+        }
+        div:last-child {
+          transform: translateY(-9px) rotate(135deg);
+        }
+      }
+  
+      div {
+        background: #fff;
+        height: 3px;
+        width: 30px;
+        margin-top: 6px;
+        transition: all 0.2s ease-out;
+      }
+    }
+  }
 }
 
 main {
@@ -165,10 +173,6 @@ footer {
       position: relative;
       width: 100vw;
 
-      span {
-        display: none;
-      }
-    
       ul {
         margin: 5px;
         padding: 0;

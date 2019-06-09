@@ -13,24 +13,6 @@ header {
   position: relative;
 }
 
-header #slider-menu {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-header #slider-menu i {
-  color: #fef;
-  margin: 40px;
-}
-
-header #slider-menu i:hover {
-  color: #777;
-  -webkit-transition: color 0.65s ease;
-  transition: color 0.65s ease;
-  cursor: pointer;
-}
-
 header nav {
   font-size: 1.8rem;
   font-weight: 200;
@@ -43,7 +25,6 @@ header nav {
   width: 0px;
   background: #222;
   opacity: 0.95;
-  z-index: 1;
   overflow: hidden;
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
@@ -54,18 +35,7 @@ header nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-header nav span {
-  color: #fef;
-  margin: 0 20px;
-  padding: 10px;
-  font-size: 4rem;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  z-index: 1;
 }
 
 header nav ul {
@@ -111,6 +81,47 @@ header #nav-logo {
   font-family: "Oswald", sans-serif;
   text-align: center;
   color: #fef;
+}
+
+header #slider-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+header #slider-menu #toggle {
+  margin: 15px 25px;
+  padding: 3px;
+  top: 0;
+  right: 0;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+header #slider-menu #toggle:hover div:first-child {
+  -webkit-transform: translateY(9px) rotate(-135deg);
+          transform: translateY(9px) rotate(-135deg);
+}
+
+header #slider-menu #toggle:hover div:nth-child(2) {
+  opacity: 0;
+}
+
+header #slider-menu #toggle:hover div:last-child {
+  -webkit-transform: translateY(-9px) rotate(135deg);
+          transform: translateY(-9px) rotate(135deg);
+}
+
+header #slider-menu #toggle div {
+  background: #fff;
+  height: 3px;
+  width: 30px;
+  margin-top: 6px;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 main {
@@ -185,9 +196,6 @@ footer {
     font-weight: 200;
     position: relative;
     width: 100vw;
-  }
-  header nav span {
-    display: none;
   }
   header nav ul {
     margin: 5px;
