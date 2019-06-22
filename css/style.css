@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400|Raleway:200,300,400");
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400|Raleway:200,300,400|Allura:200,300,400");
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -77,22 +77,46 @@ header nav ul li a:hover {
 header #nav-logo {
   position: relative;
   padding: 25px;
-  font-size: 5rem;
-  font-family: "Oswald", sans-serif;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #fef;
-  height: 60vw;
+  height: 100vh;
   z-index: 1;
+  min-height: 100vh;
+}
+
+header #nav-logo h1 {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
+  top: 10vh;
+}
+
+header #nav-logo span {
+  position: relative;
+  font-size: 2rem;
+  font-family: "Allura", sans-serif;
+  top: 15vh;
 }
 
 header #nav-logo::before {
   background-image: url("../img/cover-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center 20vh;
   position: absolute;
-  top: -10vw;
+  top: -10vh;
   left: 0;
-  height: 65vw;
+  height: 100vh;
   width: 100vw;
   content: ' ';
   opacity: 0.4;
@@ -142,6 +166,13 @@ header #slider-menu #toggle div {
 
 main {
   background: #222;
+  padding-top: 50px;
+}
+
+main h2 {
+  text-align: center;
+  color: #fef;
+  font-weight: 200;
 }
 
 main #featured-images {
@@ -230,6 +261,19 @@ footer {
   header nav ul li {
     display: inline-block;
     margin: 8px 20px;
+  }
+  header #nav-logo h1 {
+    font-size: 5rem;
+  }
+  header #nav-logo span {
+    margin-top: 100px;
+    font-size: 4rem;
+    background: rgba(34, 34, 34, 0.1);
+    padding: 0 20px;
+  }
+  header #nav-logo::before {
+    background-position: 0 -10vh;
+    height: 100vh;
   }
   header #slider-menu {
     display: none;

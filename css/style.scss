@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400|Raleway:200,300,400');
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400|Raleway:200,300,400|Allura:200,300,400');
+
 
 $primary-font: 'Raleway', sans-serif;
 $secondary-font: 'Oswald', sans-serif;
+$tertiary-font: 'Allura', sans-serif;
 $primary-font-color: #fef;
 $primary-background: #222;
 
@@ -65,21 +67,38 @@ header {
   #nav-logo {
     position: relative;
     padding: 25px;
-    font-size: 5rem;
-    font-family: $secondary-font;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: $primary-font-color;
-    height: 60vw;
+    height: 100vh;
     z-index: 1;
+    min-height: 100vh;
+
+    h1 {
+      position: relative;
+      font-size: 3rem;
+      font-weight: 400;
+      font-family: $secondary-font;
+      top: 10vh;
+    }
+
+    span {
+      position: relative;
+      font-size: 2rem;
+      font-family: $tertiary-font;
+      top: 15vh;
+    }
 
     &::before {
       background-image: url('../img/cover-image.jpg');
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center 20vh;
       position: absolute;
-      top: -10vw;
+      top: -10vh;
       left: 0;
-      height: 65vw;
+      height: 100vh;
       width: 100vw;
       content: ' ';
       opacity: 0.4;
@@ -130,6 +149,13 @@ header {
 
 main {
   background: $primary-background;
+  padding-top: 50px;
+
+  h2 {
+    text-align: center;
+    color: $primary-font-color;
+    font-weight: 200;
+  }
 
   #featured-images {
     display: grid;
@@ -202,6 +228,27 @@ footer {
           display: inline-block;
           margin: 8px 20px;
         }
+      }
+    }
+
+    #nav-logo {
+
+      h1 {
+        font-size: 5rem;
+      }
+  
+      span {
+        margin-top: 100px;
+        font-size: 4rem;
+        background: rgba($primary-background, 0.1);
+        padding: 0 20px;
+      }
+  
+      &::before {
+
+        background-position: 0 -10vh;
+        height: 100vh;
+        
       }
     }
 
