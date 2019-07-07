@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400|Raleway:200,300,400|Allura:200,300,400');
+@import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400|Open+Sans:200,300,400|Allura:200,300,400');
 
 
-$primary-font: 'Raleway', sans-serif;
+$primary-font: 'Open Sans', sans-serif;
 $secondary-font: 'Oswald', sans-serif;
 $tertiary-font: 'Allura', sans-serif;
 $primary-font-color: #fef;
 $primary-background: #222;
+$dark-grey: #444;
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -13,6 +14,15 @@ $primary-background: #222;
 
 body {
   font-family: $primary-font;
+}
+
+a {
+  color: $dark-grey;
+  transition: color 0.6s ease;
+
+  &:hover {
+    color: $primary-font-color;
+  }
 }
 
 header {
@@ -151,7 +161,7 @@ main {
   background: $primary-background;
   padding-top: 50px;
 
-  h2 {
+  h3 {
     text-align: center;
     color: $primary-font-color;
     font-weight: 200;
@@ -202,8 +212,36 @@ main {
 
 footer {
   background: $primary-background;
-  padding: 50px 20px;
+  font-size: 0.9rem;
+  padding: 50px 20px 20px 20px;
   color: $primary-font-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  .address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .phone {
+      margin-top: 10px;
+    }
+  }
+
+  .social {
+    margin: 60px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.3rem;
+
+    a {
+      margin: 20px 30px;
+      padding: 5px;
+    }
+  }
 }
 
 // Media Queries
@@ -264,4 +302,5 @@ footer {
       grid-template-rows: repeat(2, 1fr);
     }
   }
+
 }
